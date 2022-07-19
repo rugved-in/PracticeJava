@@ -1,6 +1,6 @@
-package data.dao;
+package data;
 
-public class Person {
+public class Employee {
 
     /*a. Constructors - default, parametrized constructors
     b. getter and setter
@@ -8,16 +8,13 @@ public class Person {
     d. Overloading vs overriding*/
 
     private int age;
-    public String name;
-    protected float height;
-    int weight;
+    private String name;
+    private float height;
+    private int weight;
+    private Car car;
 
-
-    public Person(int age, String name, float height, int weight) {
-        this.age = age;
-        this.name = name;
-        this.height = height;
-        this.weight = weight;
+    public int getAge() {
+        return this.age;
     }
 
     public String getName() {
@@ -44,23 +41,28 @@ public class Person {
         this.weight = weight;
     }
 
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
     public void setAge(int age) {
-        if (age > 0) {
+        if (age > 18) {
             this.age = age;
         }
     }
 
-    public int getAge() {
-        return this.age;
-    }
-
     @Override
     public String toString() {
-        return "data.dao.Person{" +
+        return "Employee{" +
                 "age=" + age +
                 ", name='" + name + '\'' +
                 ", height=" + height +
                 ", weight=" + weight +
+                ", car=" + car +
                 '}';
     }
 }
