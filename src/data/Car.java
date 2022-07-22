@@ -2,6 +2,17 @@ package data;
 
 public class Car {
 
+    public Car() {
+
+    }
+
+    public Car(String make, String model, String registrationNo, String cin) {
+        this.make = make;
+        this.model = model;
+        this.registrationNo = registrationNo;
+        this.cin = cin;
+    }
+
     private String make;
     private String model;
     private String registrationNo;

@@ -2,6 +2,18 @@ package data;
 
 public class Employee {
 
+
+    public Employee(){
+
+    }
+
+    public Employee(int age, String name, float height, int weight, Car car) {
+        this.age = age;
+        this.name = name;
+        this.height = height;
+        this.weight = weight;
+        this.car = car;
+    }
     /*a. Constructors - default, parametrized constructors
     b. getter and setter
     c. toString
