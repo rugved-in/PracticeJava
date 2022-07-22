@@ -1,43 +1,72 @@
 import data.Car;
 import data.Employee;
 
+import java.util.Arrays;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 public class Practice {
 
     public static void main(String[] args) {
 
+        /**
+         * Example 1 of creating and initializing objects
+         */
         Employee e1 = new Employee();
-
         e1.setAge(31);
         e1.setName("Rugved");
         e1.setHeight(5.7f);
         e1.setWeight(70);
-        Car car = new Car();
-        car.setCin("123456");
-        car.setMake("Tata");
-        car.setModel("Tigor");
-        car.setRegistrationNo("MH31FE7274");
-        e1.setCar(car);
+        Car car1 = new Car();
+        car1.setCin("123456");
+        car1.setMake("Tata");
+        car1.setModel("Tigor");
+        car1.setRegistrationNo("MH31FE7274");
+        e1.setCar(car1);
+        /**
+         * Example 2 of creating and initializing objects
+         */
+        Car car = new Car("Tata", "Tigot", "asads", "asdads");
+        Employee employee = new Employee(31, "Rugved", 5.7f, 70, car);
+        System.out.println(employee);
 
-        Employee e2 = new Employee();
-        e2.setAge(31);
-        e2.setName("Rugved");
-        e2.setHeight(5.7f);
-        e2.setWeight(70);
-        Car car2 = new Car();
-        car2.setCin("123456");
-        car2.setMake("Tata");
-        car2.setModel("Tigor");
-        car2.setRegistrationNo("MH31FE7274");
-        e2.setCar(car);
-        System.out.println(e1);
-        System.out.println(e2);
+        /************* Java streams *********/
+        /**
+         * Example 1 with range
+         */
+        System.out.println("Example 1 with range");
+        IntStream.range(1, 10).forEach(System.out::print);
+        System.out.println();// blank line
 
-        if(e1.getName().equals(e2.getName())){
-            System.out.println("objects are meaningfully same!");
-        }else {
-            System.out.println("objects are meaningfully not the same!");
-        }
+        /**
+         * Example 2 with skip
+         */
+        System.out.println("Example 2 with skip");
+        IntStream.range(1, 10).skip(5).forEach(x -> System.out.println(x));
 
+        /**
+         * Example 3 with sum
+         */
+        System.out.println("Example 3 with sum");
+        System.out.println(IntStream.range(1, 5).sum());
+
+        /**
+         * Example 4 Stream.of , sorted, findFirst
+         */
+        System.out.println("Example 4 Stream.of , sorted, findFirst");
+        Stream.of("Ankit", "Rugved", "Roshan", "Sachin", "Bhushan", "Aaditya")
+                .sorted()
+                .findFirst()
+                .ifPresent(s -> System.out.println(s));
+
+        /**
+         * Example 5 Stream from array , sort, filter and print
+         */
+        System.out.println("Example 5 Stream from array , sort, filter and print");
+        String[] names = {"Ankit", "Rugved", "Roshan", "Rugved","Sachin", "Suraj", "Bhushan"};
+        Arrays.stream(names)
+                .filter(x -> x.startsWith("R"))
+                .sorted()
+                .forEach(s -> System.out.println(s));
     }
-    
 }
