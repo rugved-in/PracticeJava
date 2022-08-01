@@ -1,21 +1,24 @@
 package data;
 
-public class Car {
+public abstract class Car extends Vehicle {
 
     public Car() {
 
     }
 
-    public Car(String make, String model, String registrationNo, String cin) {
+    public Car(String make, String model, String cin) {
         this.make = make;
         this.model = model;
-        this.registrationNo = registrationNo;
         this.cin = cin;
+    }
+
+    public void drive() {
+        move();
     }
 
     private String make;
     private String model;
-    private String registrationNo;
+
     private String cin;
 
     public String getMake() {
@@ -34,13 +37,6 @@ public class Car {
         this.model = model;
     }
 
-    public String getRegistrationNo() {
-        return registrationNo;
-    }
-
-    public void setRegistrationNo(String registrationNo) {
-        this.registrationNo = registrationNo;
-    }
 
     public String getCin() {
         return cin;
@@ -50,12 +46,15 @@ public class Car {
         this.cin = cin;
     }
 
+    public void applyBreak() {
+        System.out.println("applyBreak from Car.");
+    }
+
     @Override
     public String toString() {
         return "Car{" +
                 "make='" + make + '\'' +
                 ", model='" + model + '\'' +
-                ", registrationNo='" + registrationNo + '\'' +
                 ", cin='" + cin + '\'' +
                 '}';
     }

@@ -7,13 +7,15 @@ public class Employee {
 
     }
 
-    public Employee(int age, String name, float height, int weight, Car car) {
+    public Employee(int age, String name, float height, int weight, Car car, MotorBike motorBike) {
         this.age = age;
         this.name = name;
         this.height = height;
         this.weight = weight;
         this.car = car;
+        this.motorBike = motorBike;
     }
+
     /*a. Constructors - default, parametrized constructors
     b. getter and setter
     c. toString
@@ -24,6 +26,8 @@ public class Employee {
     private float height;
     private int weight;
     private Car car;
+
+    private MotorBike motorBike;
 
     public int getAge() {
         return this.age;
@@ -65,6 +69,14 @@ public class Employee {
         if (age > 18) {
             this.age = age;
         }
+    }
+
+    public MotorBike getMotorBike() {
+        return motorBike;
+    }
+
+    public void setMotorBike(MotorBike motorBike) {
+        this.motorBike = motorBike;
     }
 
     @Override
