@@ -7,4 +7,9 @@ public class Fox extends Canine {
     public void roam() {
 
     }
+
+    @Override
+    public void consume() {
+
+    }
 }

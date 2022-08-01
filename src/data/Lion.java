@@ -5,4 +5,9 @@ public class Lion extends Feline {
     public void roam() {
 
     }
+
+    @Override
+    public void consume() {
+
+    }
 }

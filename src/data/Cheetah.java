@@ -5,4 +5,9 @@ public class Cheetah extends Feline{
     public void roam() {
 
     }
+
+    @Override
+    public void consume() {
+
+    }
 }

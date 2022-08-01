@@ -5,4 +5,9 @@ public class Lynx extends Feline {
     public void roam() {
 
     }
+
+    @Override
+    public void consume() {
+
+    }
 }

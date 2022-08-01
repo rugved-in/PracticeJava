@@ -7,4 +7,9 @@ public class Hippo extends Animal {
     public void roam() {
 
     }
+
+    @Override
+    public void consume() {
+
+    }
 }
