@@ -1,6 +1,6 @@
 package data;
 
-public interface Roamable extends Consumable {
+public interface Roamable {
 
 
     void roam();

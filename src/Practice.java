@@ -1,14 +1,22 @@
-import data.Consumable;
+import data.Car;
+import data.Tigor;
 import data.Wolf;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Practice {
 
 
     public static void main(String[] args) {
-        Wolf wolf = new Wolf();
-        boolean isConsumable = wolf instanceof Consumable ? true : false;
 
-        System.out.println("is consumable: " + isConsumable);
+        Tigor rugvedsTigor = new Tigor("Tata", "XZ+", "3Cylinder", 2019);
+
+        Tigor mukulsTigor = new Tigor("Tata", "XZ+", "3Cylinder", 2021);
+
+        System.out.println(rugvedsTigor.equals(mukulsTigor));
+
+
     }
 
 

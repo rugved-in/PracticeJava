@@ -6,8 +6,5 @@ public class Lion extends Feline {
 
     }
 
-    @Override
-    public void consume() {
 
-    }
 }

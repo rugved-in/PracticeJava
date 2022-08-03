@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Objects;
+
 public abstract class Car extends Vehicle {
 
     public Car() {
@@ -57,5 +59,18 @@ public abstract class Car extends Vehicle {
                 ", model='" + model + '\'' +
                 ", cin='" + cin + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(make, car.make) && Objects.equals(model, car.model) && Objects.equals(cin, car.cin);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(make, model, cin);
     }
 }

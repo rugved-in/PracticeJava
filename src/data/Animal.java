@@ -16,6 +16,6 @@ abstract public class Animal implements Roamable {
     }
 
     public void sleep() {
-
+        System.out.println("Sleep from Animal!");
     }
 }

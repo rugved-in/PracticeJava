@@ -8,8 +8,5 @@ public class Hippo extends Animal {
 
     }
 
-    @Override
-    public void consume() {
 
-    }
 }

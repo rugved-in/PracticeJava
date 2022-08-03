@@ -8,8 +8,5 @@ public class Fox extends Canine {
 
     }
 
-    @Override
-    public void consume() {
 
-    }
 }

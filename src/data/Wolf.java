@@ -8,7 +8,8 @@ public class Wolf extends Canine {
     }
 
     @Override
-    public void consume() {
-
+    public void sleep() {
+        System.out.println("Sleep from Wolf!");
+        super.sleep();
     }
 }

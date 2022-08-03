@@ -6,8 +6,5 @@ public class Lynx extends Feline {
 
     }
 
-    @Override
-    public void consume() {
 
-    }
 }
