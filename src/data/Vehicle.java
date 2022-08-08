@@ -22,7 +22,7 @@ public abstract class Vehicle implements Roamable {
     }
 
     public void move() {
-
+        System.out.println("Move from Vehicle.");
     }
 
     public void applyBreak() {

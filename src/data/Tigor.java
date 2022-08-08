@@ -60,11 +60,6 @@ public class Tigor extends Car {
     }
 
     @Override
-    public void eat() {
-        super.eat();
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -79,5 +74,15 @@ public class Tigor extends Car {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), make, variant, engineType);
+    }
+
+    @Override
+    public String toString() {
+        return "Tigor{" +
+                "make='" + make + '\'' +
+                ", variant='" + variant + '\'' +
+                ", engineType='" + engineType + '\'' +
+                ", year=" + year +
+                '}';
     }
 }
