@@ -5,18 +5,25 @@ import data.Vehicle;
 import java.util.*;
 
 public class Practice {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("Some work started! Thread:" + Thread.currentThread().getName());
+        /*Thread myThread = new MyThread("Thread-01");
+        myThread.start();
+        Thread.sleep(1000 * 2);*/
+        MyRunnable myRunnable = new MyRunnable();
+        Thread thread = new Thread(myRunnable, "MyRunnable-01");
+        thread.start();
+        thread.join();
+        for (int i = 0; i < 300; i++) {
+            try {
+                Thread.sleep(25);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(" " + i + "on Thread: " + Thread.currentThread().getName());
+        }
 
-        Map<String,Tigor> tigorMap = new HashMap<>();
-        Tigor t1 = new Tigor("Tata", "XZ+", "3Cylinder", 2019);
-        t1.setCin("asdf12345asd");
-        tigorMap.put(t1.getCin(),t1);
-
-        Tigor t2 = new Tigor("Tata", "XZ+", "3Cylinder", 2021);
-        t2.setCin("asdf12346asd");
-        tigorMap.put(t2.getCin(),t2);
-
-        System.out.println(tigorMap.get("aasdsad123"));
+        System.out.println("Some work ended! Thread:" + Thread.currentThread().getName());
     }
 
     static List<Tigor> getCars() throws ArrayIndexOutOfBoundsException {
